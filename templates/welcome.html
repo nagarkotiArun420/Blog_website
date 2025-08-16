@@ -1,0 +1,21 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Blog</title>
+    <link rel="stylesheet" href="{% static 'blog_app/css/style.css' %}" >
+
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">Welcome to the Blog!</div>
+        <div class="quote">"A blog is only as interesting as the interest shown in others." – Lee Odden</div>
+       <a href="{% url 'home' %}"><button> get started </button></a>
+       
+    </div>
+</body>
+</html>
