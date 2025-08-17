@@ -24,6 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', include('blog_app.urls')),  
+    path('category/',include('blog_category.urls')),
+    
     # Assuming you have a blog app with its own urls.py
     
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
