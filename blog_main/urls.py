@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog_category import views 
 
  # Assuming you have a blog_app with a views.py file
 
@@ -25,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', include('blog_app.urls')),  
     path('category/',include('blog_category.urls')),
+    path('<slug:slug>/', views.blogs, name='blogs' )
+    
     
     # Assuming you have a blog app with its own urls.py
     
