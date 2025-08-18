@@ -1,1 +1,52 @@
-<h1> posts by category </h1>
+
+{% extends 'base/base.html'%}
+{% block content %}
+
+<div class="row mb-2">
+ {% for post in featured_post %}
+    {% if not forloop.first %}
+  
+    <div class="col-md-6">
+      <div class="card border-0" >
+        <div class="card-body">
+          <h3>{{ post.title }}</h3>
+          <small class="mb-1 text-muted">{{ post.created_at | timesince }} ago | {{post.author}} </small>
+          <p class="card-text">{{ post.short_description | truncatewords:20 }}</p>
+        </div>
+      </div>
+    </div>
+   {% endif %}
+  {% endfor %}  
+  </div>
+
+ <!-- recent articles --> 
+ 
+<h3 class="text-uppercase text-warning" style="letter-spacing: 2px;"> Category - {{ category }} </h3>
+
+  <main role="main" class="container p-0">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        
+
+       {% for post in posts %}
+        <div class="card border-0" >
+         <div class="card-body">
+          <h3>{{ post.title }}</h3>
+          <small class="mb-1 text-muted">{{ post.created_at | timesince }} ago | {{post.author}} </small>
+          <p class="card-text">{{ post.short_description | truncatewords:20  }}</p>
+         </div>
+      </div>
+       {% endfor %}
+      
+        
+
+      </div>
+
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+
+</div>
+
+{% endblock %} 

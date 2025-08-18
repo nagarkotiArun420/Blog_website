@@ -36,6 +36,9 @@ class Blogs(models.Model):
     
     class Meta:
         verbose_name_plural = 'Blogs'
+        
+    def __str__(self):
+        return self.title
     
     
     
