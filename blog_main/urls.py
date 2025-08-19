@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', include('blog_app.urls')),  
     path('category/',include('blog_category.urls')),
-    path('<slug:slug>/', views.blogs, name='blogs' )
+    path('<slug:slug>/', views.blogs, name='blogs' ),
+    path('blogs/search/', views.search, name = "search"),
     
     
     # Assuming you have a blog app with its own urls.py
