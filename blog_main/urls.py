@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from blog_category import views 
+from blog_category import views as BlogViews
+
 
  # Assuming you have a blog_app with a views.py file
 
@@ -26,8 +27,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', include('blog_app.urls')),  
     path('category/',include('blog_category.urls')),
-    path('<slug:slug>/', views.blogs, name='blogs' ),
-    path('blogs/search/', views.search, name = "search"),
+    path('blog_category/<slug:slug>/', BlogViews.blogs, name='blogs' ),
+    path('blogs/search/',BlogViews.search, name = "search"),
+    path('', include('authentication.urls')),  
+    
     
     
     # Assuming you have a blog app with its own urls.py
