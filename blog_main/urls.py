@@ -29,7 +29,8 @@ urlpatterns = [
     path('category/',include('blog_category.urls')),
     path('blog_category/<slug:slug>/', BlogViews.blogs, name='blogs' ),
     path('blogs/search/',BlogViews.search, name = "search"),
-    path('', include('authentication.urls')),  
+    path('', include('authentication.urls')),
+    path('', include('dashboard.urls')),    
     
     
     
