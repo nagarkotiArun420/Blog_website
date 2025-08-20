@@ -13,6 +13,8 @@
     <!-- left sidebar -->
 
         <div class="col-md-9">
+          <h3> All categories </h3>
+          <a href="{% url 'add_categories' %}" class="btn btn-dark text-light float-right mb-3"> Add New Category</a>
 
             <table class="table table-hover">
   <thead>
@@ -32,7 +34,7 @@
       <td>{{ cat.created_at}}</td>
       <td>{{ cat.updated_at}}</td>
       <td> 
-        <a href=""><i class="fa fa-edit text-success"></i></a> &nbsp; &nbsp;
+        <a href="{% url 'edit_categories' %}"><i class="fa fa-edit text-success"></i></a> &nbsp; &nbsp;
         <a href=""><i class="fa fa-trash text-danger"></i></a>
         
 

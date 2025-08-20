@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from blog_category.models import Category,Blogs
 from django.contrib.auth.decorators import login_required
+from . forms import CategoryForm
 
 # Create your views here.
 
@@ -18,3 +19,18 @@ def dashboard(request):
 
 def categories(request):
     return render(request,'dashboard/categories.html')
+
+def add_categories(request):
+    if request.method=="POST":
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('categories')
+    form = CategoryForm()
+    context = {
+        'form':form
+    }
+    return render(request,'dashboard/add_categories.html', context)
+
+def edit_categories(request,pk):
+    return render(request,"dashboard/edit_categories.html")
