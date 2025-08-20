@@ -5,15 +5,7 @@
 <div class="row">
 
     <!-- left sidebar -->
-    <div class="col-md-3">
-        <div class ="nav flex-column nav-pills bg-light aria-orientation='vertical'">
-            <a href="" class="nav-link text-dark bg-warning"> Dashboard </a>
-            <a href=""> Categories</a>
-            <a href=""> Posts</a>
-            <a href=""> Logout</a>
-            
-        </div>
-</div>
+{% include './leftsidebar.html'%}
 
 <div class="col-md-9">
     <div class="row">
@@ -24,7 +16,7 @@
 
                 </div>
                 <div class = "card-body text-dark">
-                    <h5 class="cart-title text-center"> </h5>
+                    <h5 class="cart-title text-center"> {{category_count}} </h5>
                 </div>
             </div>
         </div>
@@ -37,7 +29,7 @@
 
                 </div>
                 <div class = "card-body text-dark">
-                    <h5 class="cart-title text-center"> </h5>
+                    <h5 class="cart-title text-center"> {{blogs_count}}</h5>
                 </div>
             </div>
         </div>
