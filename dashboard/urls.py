@@ -13,6 +13,7 @@ urlpatterns = [
     path('dashboard/posts/', views.posts, name="posts"),\
     path('dashboard/posts/add/', views.add_post, name="add_post"),
     path('dashboard/posts/edit/<int:pk>', views.edit_post, name="edit_post"),
+    path('dashboard/posts/delete/<int:pk>', views.delete_post, name="delete_post"),
 
     
     

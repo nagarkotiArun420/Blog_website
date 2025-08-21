@@ -80,3 +80,10 @@ def add_post(request):
 def edit_post(request,pk):
     
     return render(request,'dashboard/edit_post.html')
+
+
+def delete_post(request,pk):
+    post = get_object_or_404(Blogs, pk=pk)
+    post.delete()
+    return render("posts")
+
