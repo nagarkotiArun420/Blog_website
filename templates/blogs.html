@@ -24,38 +24,38 @@
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{ single_post.short_description }}</p>
                     <p class="fs-5 mb-4">{{ single_post.blog_body }}</p>
-
-                    <!-- Comments -->
-                    <h4>Comments({{ comment_count }})</h4>
+                    
+                    
+                     <!-- Comments -->
+                    <h4> Comments {{comment_count}} </h4>
                     {% if comments %}
                      {% for comment in comments %}
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text mb-0">{{ comment }}</p>
-                                <span>
-                                    <small>{{ comment.user }}</small>
-                                    <small>{{ comment.created_at | timesince }} ago</small>
-                                </span>
-                            </div>
+                       <div class="card">
+                        <div class = "card-body">
+                            <p class="card-text mb-0">{{comment}}</p>
+                            <span> 
+                                <small> {{comment.user}} </small>
+                                <small> {{comment.created_at | timesince }} </small>
+                            </span>
                         </div>
-                     {% endfor %}
+                       </div>
+                    {% endfor %}
                     {% else %}
-                    No Comments Yet
-
+                    no comments yet
                     {% endif %}
-                    <div class="form-group">
-                        {% if user.is_authenticated %}
+                    <div class = "form-group">
+                        {% if user.if_authenticated %}
                         <form action="" method="POST">
                             {% csrf_token %}
-                            <div class="form-group">
+                            <div class = "form-group">
                                 <textarea name="comment" class="form-control" placeholder="Write your Comment"></textarea>
-                                <input type="submit" class="btn btn-primary mt-2">
+                                <input type="submit" class="btn btn-primary mt-2 mb-2">
                             </div>
                         </form>
                         {% else %}
-                         <p>Please <span><a href="{% url 'login' %}">Login</a></span> to write a comment!</p>
-                         {% endif %}
-                    </div>
+                        <p> Please <span> <a href="{% url 'login' %}">login first</a></span></P>
+                        {% endif %}
+                    </div>                 
                 </section>
             </article>
         </div>
