@@ -1,4 +1,4 @@
-
+@"
 # Blog Website
 
 A fully functional **Django-based Blog Website** where users can read, create, edit, and manage blog posts. The project includes user authentication, categories, a dashboard for admin management, and media uploads.
@@ -31,8 +31,8 @@ A fully functional **Django-based Blog Website** where users can read, create, e
 
 1. Clone the repository:
 \`\`\`bash
-git clone <your-repo-url>
-cd Blog-Website
+git clone https://github.com/nagarkotiArun420/Blog_website.git
+cd Blog_website
 \`\`\`
 2. Create a virtual environment and activate it:
 \`\`\`bash
