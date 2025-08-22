@@ -83,7 +83,7 @@ def add_post(request):
 def edit_post(request,pk):
     post = get_object_or_404(Blogs, pk=pk)
     if request.method =='POST':
-        form = EditUserForm(request.POST, request.FILES, instance=post)
+        form = EditPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
             return redirect('posts')
@@ -93,8 +93,7 @@ def edit_post(request,pk):
         'form':form,
         'post':post,
         }
-    
-    
+
     return render(request,'dashboard/edit_post.html',context)
 
 
